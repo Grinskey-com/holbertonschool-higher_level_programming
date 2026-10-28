@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists all states matching the name given as an argument, safely"""
+"""Lists all states matching the name given as an argument, safely."""
 import sys
 import MySQLdb
 
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     cur.execute(
         "SELECT * FROM states WHERE name = %s ORDER by id ASC",
         (sys.argv[4],)
-        )
+    )
     rows = cur.fetchall()
 
     for row in rows:
