@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists all states matching the name given as an argument"""
+"""Lists all cities from the database with their states."""
 import sys
 import MySQLdb
 
@@ -15,10 +15,9 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     cur.execute(
-        "SELECT cities.id, cities.name, state.name"
-        "FROM cities JOIN states ON cities.state._id = states.id"
+        "SELECT cities.id, cities.name, states.name "
+        "FROM cities JOIN states ON cities.state_id = states.id "
         "ORDER BY cities.id ASC"
-    
     )
     rows = cur.fetchall()
 
